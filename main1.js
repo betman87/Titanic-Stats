@@ -16169,7 +16169,7 @@ function drawChart2() {
       title: 'Preziveli po ulazima kojima su se ukrcavali na brod',
       subtitle: 'Sales, Expenses, and Profit: 2014-2017',
     },
-    bars: 'horizontal' // Required for Material Bar Charts.
+    bars: 'vertical' // Required for Material Bar Charts.
   };
 
   var chart = new google.charts.Bar(document.getElementById('barchart_material'));
