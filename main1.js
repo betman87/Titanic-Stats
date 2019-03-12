@@ -16064,160 +16064,7 @@ const putnici = [
   }
 ]
 
-// let liveMen = 0
-// let deadMen = 0
-// let liveWomen = 0
-// let deadWomen = 0
-// let babies = 0
-// let men = 0
-// let women = 0
-// let children = 0
-// let survived1 = 0
-// let survived2 = 0
-// let survived3 = 0
-// let died1 = 0
-// let died2 = 0
-// let died3 = 0
-// let temp // kasno sam se setio
 
-// putnici.map(x => {
-//   if (x.fields.sex == "female") {
-//     if (x.fields.survived == "Yes") {
-//       liveWomen++
-//     } else deadWomen++
-//   } else if (x.fields.sex == "male") {
-//     if (x.fields.survived == "Yes") {
-//       liveMen++
-//     } else deadMen++
-//   }
-//   return x
-// })
-
-// for (let i = 0; i < putnici.length; i++) {
-//   if (putnici[i].fields.sex == "female" && putnici[i].fields.age >= 18) {
-//     women++
-//   } else if (putnici[i].fields.sex == "male" && putnici[i].fields.age >= 18) {
-//     men++
-//   } else if (putnici[i].fields.age < 18 && putnici[i].fields.age > 2) {
-//     children++
-//   } else if (putnici[i].fields.age <= 2) {
-//     babies++
-//   }
-//   temp = putnici[i].fields
-//   if (temp.pclass == 1 && temp.survived == "Yes") {
-//     survived1++
-//   } else if (temp.pclass == 1 && temp.survived == "No") {
-//     died1++
-//   } else if (temp.pclass == 2 && temp.survived == "Yes") {
-//     survived2++
-//   } else if (temp.pclass == 2 && temp.survived == "No") {
-//     died2++
-//   } else if (temp.pclass == 3 && temp.survived == "Yes") {
-//     survived3++
-//   } else if (temp.pclass == 3 && temp.survived == "No") {
-//     died3++
-//   }
-// }
-
-// // for( let i = 0; i < 50; i++ ) {
-// //     // console.log(putnici[i].fields.pclass)
-// // }
-
-// // Chart functions
-// function drawTrendlines() {
-//   var data = new google.visualization.DataTable();
-//   data.addColumn('string', 'Time of Day');
-//   data.addColumn('number', 'Survived');
-//   data.addColumn('number', 'Died');
-//   data.addColumn('number', 'Total');
-
-//   data.addRows([
-//     [{ v: 'Male', f: 'Male' }, liveMen, deadMen, liveMen + deadMen],
-//     [{ v: "Female", f: 'Female' }, liveWomen, deadWomen, liveWomen + deadWomen],
-//   ]);
-
-//   var options = {
-//     title: 'Survival by gender',
-//     // trendlines: {
-//     //     0: { type: 'linear', lineWidth: 5, opacity: .3 },
-//     //     1: { type: 'exponential', lineWidth: 10, opacity: .3 }
-//     // },
-//     hAxis: {
-//       title: 'Gender',
-//       // format: 'h:mm a',
-//       // viewWindow: {
-//       //     min: [7, 30, 0],
-//       //     max: [17, 30, 0]
-//       // }
-//     },
-//     vAxis: {
-//       title: 'Number of people'
-//     }
-//   };
-
-//   var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
-//   chart.draw(data, options);
-// }
-
-// function drawChart() {
-
-//   var data = google.visualization.arrayToDataTable([
-//     ['Group', 'Number of members'],
-//     ['Men', men],
-//     ['Women', women],
-//     ['Children', children],
-//     ['Babies', babies]
-//   ]);
-
-//   var options = {
-//     title: 'Crew Manifest',
-//     legend: { position: 'bottom' },
-//     pieSliceText: 'label',
-//     slices: {
-//       2: { offset: 0.1 },
-//       3: { offset: 0.2 }
-//     },
-//   };
-
-//   var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-
-//   chart.draw(data, options);
-// }
-// // Calling chart functions
-// //column chart
-// google.charts.load('current', { packages: ['corechart', 'bar'] });
-// google.charts.setOnLoadCallback(drawTrendlines);
-// //pie chart
-// google.charts.load('current', { 'packages': ['corechart'] });
-// google.charts.setOnLoadCallback(drawChart);
-
-// //bar chart
-// google.charts.load('current', { packages: ['corechart', 'bar'] });
-// google.charts.setOnLoadCallback(drawMultSeries);
-
-// function drawMultSeries() {
-//   var data = google.visualization.arrayToDataTable([
-//     ['Travel Class', 'Survived', 'Died'],
-//     ['First Class', survived1, died1],
-//     ['Second Class', survived2, died2],
-//     ['Third Class', survived3, died3]
-//   ]);
-
-//   var options = {
-//     title: 'Survival by Travel Class',
-//     chartArea: { width: '50%' },
-//     hAxis: {
-//       title: 'Number survived',
-//       minValue: 0
-//     },
-//     vAxis: {
-//       title: 'Travel Class'
-//     }
-//   };
-
-//   var chart = new google.visualization.BarChart(document.getElementById('bar_div'));
-//   chart.draw(data, options);
-// 
 let embarkeds = 0;
 let embarkedq = 0;
 let embarkedc = 0;
@@ -16251,3 +16098,81 @@ function drawChart() {
 }
 
 //https://baza-filmova.herokuapp.com/filmovi/
+
+let embarkeds = 0;
+let embarkedq = 0;
+let embarkedc = 0;
+let embarkedsy = 0;
+let embarkedsn = 0;
+let embarkedqy = 0;
+let embarkedqn = 0;
+let embarkedcy = 0;
+let embarkedcn = 0;
+
+
+for (let i = 0; i < putnici.length; i++) {
+  if (putnici[i].fields.embarked == 'S') embarkeds++;
+  else if (putnici[i].fields.embarked == 'C') embarkedc++;
+  else if (putnici[i].fields.embarked == 'Q') embarkedq++;
+}
+
+google.charts.load("current", { 'packages': ["corechart"] });
+google.charts.setOnLoadCallback(drawChart);
+
+function drawChart() {
+  var data1 = google.visualization.arrayToDataTable([
+    ['Task', 'Hours per Day'],
+    ['C ulaz', embarkedc],
+    ['Q ulaz', embarkedq],
+    ['S ulaz', embarkeds],
+
+  ]);
+
+  var options1 = {
+    title: 'Na koji su ulaz usli putnici Titanika',
+    pieHole: 0.4,
+  };
+
+  var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+  chart.draw(data1, options1);
+}
+
+https://baza-filmova.herokuapp.com/filmovi/
+
+google.charts.load('current', { 'packages': ['bar'] });
+google.charts.setOnLoadCallback(drawChart2);
+for (i = 0; i < putnici.length; i++) {
+  if (putnici[i].fields.embarked == 'S') {
+    if (putnici[i].fields.survived == "Yes") embarkedsy++;
+    else embarkedsn++;
+  }
+  else if (putnici[i].fields.embarked == 'C') {
+    if (putnici[i].fields.survived == "Yes") embarkedcy++;
+    else embarkedcn++;
+  }
+  else if (putnici[i].fields.embarked == 'Q') {
+    if (putnici[i].fields.survived == "Yes") embarkedqy++;
+    else embarkedqn++;
+  }
+}
+
+function drawChart2() {
+  var data = google.visualization.arrayToDataTable([
+    ['Ulaz', 'Preziveli',"Nisu"],
+    ['S:', embarkedsy ,embarkedsn],
+    ['Q:', embarkedqy ,embarkedqn],
+    ['C:', embarkedcy ,embarkedcn]
+  ]);
+
+  var options = {
+    chart: {
+      title: 'Preziveli po ulazima kojima su se ukrcavali na brod',
+      subtitle: 'Sales, Expenses, and Profit: 2014-2017',
+    },
+    bars: 'horizontal' // Required for Material Bar Charts.
+  };
+
+  var chart = new google.charts.Bar(document.getElementById('barchart_material'));
+
+  chart.draw(data, google.charts.Bar.convertOptions(options));
+}
