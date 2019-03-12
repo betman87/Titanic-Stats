@@ -16097,7 +16097,7 @@ function drawChart() {
   chart.draw(data, options);
 }
 
-//https://baza-filmova.herokuapp.com/filmovi/
+
 
 let embarkeds = 0;
 let embarkedq = 0;
@@ -16137,7 +16137,7 @@ function drawChart() {
   chart.draw(data1, options1);
 }
 
-https://baza-filmova.herokuapp.com/filmovi/
+
 
 google.charts.load('current', { 'packages': ['bar'] });
 google.charts.setOnLoadCallback(drawChart2);
