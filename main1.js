@@ -16068,45 +16068,6 @@ const putnici = [
 let embarkeds = 0;
 let embarkedq = 0;
 let embarkedc = 0;
-
-
-for (let i = 0; i < putnici.length; i++) {
-  if (putnici[i].fields.embarked == 'S') embarkeds++;
-  else if (putnici[i].fields.embarked =='C') embarkedc++;
-  else if (putnici[i].fields.embarked =='Q') embarkedq++;
-}
-
-google.charts.load("current", { packages: ["corechart"] });
-google.charts.setOnLoadCallback(drawChart);
-
-function drawChart() {
-  var data = google.visualization.arrayToDataTable([
-    ['Task', 'Hours per Day'],
-    ['C ulaz', embarkedc],
-    ['Q ulaz', embarkedq],
-    ['S ulaz', embarkeds],
-   
-  ]);
-
-  var options = {
-    title: 'Na koji su ulaz usli putnici Titanika',
-    pieHole: 0.4,
-  };
-
-  var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
-  chart.draw(data, options);
-}
-
-
-
-let embarkeds = 0;
-let embarkedq = 0;
-let embarkedc = 0;
-for (let i = 0; i < putnici.length; i++) {
-  if (putnici[i].fields.embarked == 'S') embarkeds++;
-  else if (putnici[i].fields.embarked == 'C') embarkedc++;
-  else if (putnici[i].fields.embarked == 'Q') embarkedq++;
-}
 let embarkedsy = 0;
 let embarkedsn = 0;
 let embarkedqy = 0;
@@ -16114,7 +16075,7 @@ let embarkedqn = 0;
 let embarkedcy = 0;
 let embarkedcn = 0;
 
-/*
+
 for (let i = 0; i < putnici.length; i++) {
   if (putnici[i].fields.embarked == 'S') embarkeds++;
   else if (putnici[i].fields.embarked == 'C') embarkedc++;
@@ -16140,16 +16101,13 @@ function drawChart() {
 
   var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
   chart.draw(data1, options1);
-} */
+}
 
 
 
 google.charts.load('current', { 'packages': ['bar'] });
 google.charts.setOnLoadCallback(drawChart2);
-
-
-function drawChart2() {
-  for (i = 0; i < putnici.length; i++) {
+for (i = 0; i < putnici.length; i++) {
   if (putnici[i].fields.embarked == 'S') {
     if (putnici[i].fields.survived == "Yes") embarkedsy++;
     else embarkedsn++;
@@ -16163,6 +16121,8 @@ function drawChart2() {
     else embarkedqn++;
   }
 }
+
+function drawChart2() {
   var data = google.visualization.arrayToDataTable([
     ['Ulaz', 'Preziveli',"Nisu"],
     ['S:', embarkedsy ,embarkedsn],
