@@ -16107,14 +16107,14 @@ for (let i = 0; i < putnici.length; i++) {
   else if (putnici[i].fields.embarked == 'C') embarkedc++;
   else if (putnici[i].fields.embarked == 'Q') embarkedq++;
 }
-/*let embarkedsy = 0;
+let embarkedsy = 0;
 let embarkedsn = 0;
 let embarkedqy = 0;
 let embarkedqn = 0;
 let embarkedcy = 0;
 let embarkedcn = 0;
 
-
+/*
 for (let i = 0; i < putnici.length; i++) {
   if (putnici[i].fields.embarked == 'S') embarkeds++;
   else if (putnici[i].fields.embarked == 'C') embarkedc++;
