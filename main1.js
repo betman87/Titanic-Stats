@@ -16146,7 +16146,10 @@ function drawChart() {
 
 google.charts.load('current', { 'packages': ['bar'] });
 google.charts.setOnLoadCallback(drawChart2);
-for (i = 0; i < putnici.length; i++) {
+
+
+function drawChart2() {
+  for (i = 0; i < putnici.length; i++) {
   if (putnici[i].fields.embarked == 'S') {
     if (putnici[i].fields.survived == "Yes") embarkedsy++;
     else embarkedsn++;
@@ -16160,8 +16163,6 @@ for (i = 0; i < putnici.length; i++) {
     else embarkedqn++;
   }
 }
-
-function drawChart2() {
   var data = google.visualization.arrayToDataTable([
     ['Ulaz', 'Preziveli',"Nisu"],
     ['S:', embarkedsy ,embarkedsn],
